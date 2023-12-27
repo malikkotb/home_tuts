@@ -19,10 +19,10 @@ export default function Ellipse({ width, height}) {
           gradientUnits="userSpaceOnUse"
           gradientTransform="translate(125 125) rotate(90) scale(125)"
         >
-          <stop stop-color="#860B0B" />
-          <stop offset="0.9997" stop-color="#708B14" stop-opacity="0.109375" />
-          <stop offset="0.9998" stop-color="#191F0E" stop-opacity="0.22" />
-          <stop offset="0.9999" stop-color="#47570A" stop-opacity="0.131828" />
+          <stop stopColor="#860B0B" />
+          <stop offset="0.9997" stopColor="#708B14" stopOpacity="0.109375" />
+          <stop offset="0.9998" stopColor="#191F0E" stopOpacity="0.22" />
+          <stop offset="0.9999" stopColor="#47570A" stopOpacity="0.131828" />
         </radialGradient>
       </defs>
     </svg>
