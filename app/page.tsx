@@ -1,7 +1,9 @@
 "use client";
 import Ellipse from "@/components/Ellipse";
 import styles from "./styles.module.css";
+import Tutorials from "@/components/Tutorials";
 import { useEffect, useRef } from "react";
+import Tag from "@/components/Tag";
 
 export default function Home() {
   const topics: string[] = ["coding", "frontend", "backend", "animations"];
@@ -10,8 +12,6 @@ export default function Home() {
   function sleep(ms: number) {
     return new Promise((resolve) => setTimeout(resolve, ms));
   }
-
-  // const el = document.getElementById("typewriter");
 
   let sleepTime = 100; // (in ms)
 
@@ -27,7 +27,7 @@ export default function Home() {
         }
         await sleep(sleepTime);
       }
-      
+
       await sleep(sleepTime * 10);
 
       for (let i = currentTopic.length; i > 0; i--) {
@@ -44,21 +44,20 @@ export default function Home() {
       } else {
         curTopicIndex++;
       }
-
     }
   };
 
   writeLoop();
 
   return (
-    <main className="flex min-h-screen flex-col mt-12 items-center p-8">
-      <div className="titlehomepage">
-        <div className="text-4xl font-medium my-8 items-center text-center flex flex-col">
+    <main className="flex min-h-screen flex-col mt-12 items-center p-10 px-14">
+      <div className="">
+        <div className=" text-[3vw] font-medium my-8 items-center text-center flex flex-col">
           <p className="flex gap-2 items-center">
-            Welcome to my blog {<Ellipse width={40} height={40} />}
+            Welcome to my blog {<Ellipse width={36} height={36} />}
           </p>
           <span className="opacity-70">
-            I&apos;m, Malik and here I showcase my latest endeavors in{" "}
+            I&apos;m Malik and here are my latest explorations in{" "}
             <span
               ref={typewriterRef}
               id="typewriter"
@@ -69,8 +68,19 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="tab with cateogries">Categories tab</div>
-      <div>List of cards with blog posts</div>
+      <div className="flex flex-wrap gap-1 my-6">
+        {/* TODO: make these links to filter all tutorials by and of course tag each tutorial with >=1 tag */}
+
+        <Tag name="Web Development" />
+        <Tag name="Tools" />
+        <Tag name="Articles" />
+        <Tag name="Videos" />
+        <Tag name="Podcasts" />
+        <Tag name="Tutorials" />
+        <Tag name="Frontend" />
+        <Tag name="Backend" />
+      </div>
+      <Tutorials />
     </main>
   );
 }

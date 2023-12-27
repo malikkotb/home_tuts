@@ -1,7 +1,6 @@
 .cursor {
     color: #0072ef;
     animation: blink 1s linear infinite;
-    font-size: 36px;
 }
 
 @keyframes blink {
